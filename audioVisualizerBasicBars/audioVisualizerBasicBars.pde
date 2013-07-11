@@ -5,7 +5,7 @@ AudioInput myinput;
 int bufferSize=512;
 
 void setup() {
-  size(800,600);
+  size(500, 800);
   frameRate(30);
   background(000);
   noStroke();
@@ -23,9 +23,9 @@ void setup() {
 
 void draw() {
   background(000);
-  for (int i=1; i<bufferSize;i++) {
-    rect(i+135,590,1,myfft.spectrum[i]*-900);
-    fill(i, millis()%1000-i, 255);
+  for (int i = 1; i < width; i++) {
+    fill(i, millis() % 1000 - i, 255);
+    rect(i, 0, 1, myfft.spectrum[i] * 900);
   }
 }
 
